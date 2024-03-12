@@ -43,6 +43,9 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+<<<<<<< HEAD
+>>>>>>> parent of e94e591 ([feat] 네비게이터 완성 및 메뉴페이지 기능 추가)
+=======
 >>>>>>> parent of e94e591 ([feat] 네비게이터 완성 및 메뉴페이지 기능 추가)
   @override
   Widget build(BuildContext context) {
@@ -399,6 +402,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -423,6 +427,8 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+=======
+>>>>>>> parent of e94e591 ([feat] 네비게이터 완성 및 메뉴페이지 기능 추가)
 =======
 >>>>>>> parent of e94e591 ([feat] 네비게이터 완성 및 메뉴페이지 기능 추가)
 class ItemPreview extends StatelessWidget {
