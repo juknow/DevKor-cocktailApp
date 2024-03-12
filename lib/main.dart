@@ -12,8 +12,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int _selectedIndex = 0; // 현재 선택된 탭 인덱스
+
   bool search = false;
-  bool isClicked = false;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   void openSearch() {
     setState(() {
@@ -27,210 +34,43 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void goHome() {
-    print("go home");
-    setState(() {
-      isClicked = !isClicked;
-    });
-  }
-
-  void goMenu(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const MenuPage()),
-    );
-  }
-
-  void goAI() {
-    print("go AI");
-    setState(() {
-      isClicked = !isClicked;
-    });
-  }
-
-  void gocard() {
-    print("go AI");
-    setState(() {
-      isClicked = !isClicked;
-    });
-  }
-
-  void gomy() {
-    print("go AI");
-    setState(() {
-      isClicked = !isClicked;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
-        bottomNavigationBar: BottomAppBar(
-          color: Color(0xFF202020),
-          height: 87,
-          child: Padding(
-            padding: const EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Flexible(
-                  flex: 1,
-                  child: ElevatedButton(
-                    onPressed: goHome,
-                    style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Color(0xFF202020)),
-                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/fill_home.png',
-                        ),
-                        const Text(
-                          'home',
-                          style: TextStyle(
-                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
-                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
-                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
-                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
-                            letterSpacing: 0, // 글자 간격을 0으로 설정
-                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Builder(
-                  builder: (newContext) => Flexible(
-                    // 새로운 context를 사용하여 goMenu 호출
-                    flex: 1,
-                    child: ElevatedButton(
-                      onPressed: () => goMenu(newContext),
-                      style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Color(0xFF202020)),
-                        shadowColor:
-                            MaterialStatePropertyAll(Color(0xFF202020)),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/shape.png',
-                          ),
-                          const Text(
-                            'menu',
-                            style: TextStyle(
-                              fontFamily: 'Pretendard', // 원하는 폰트로 변경
-                              fontSize: 12, // 폰트 크기를 12픽셀로 변경
-                              fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
-                              letterSpacing: 0, // 글자 간격을 0으로 설정
-                              color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: ElevatedButton(
-                    onPressed: goAI,
-                    style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Color(0xFF202020)),
-                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/AI.png',
-                        ),
-                        const Text(
-                          'AI',
-                          style: TextStyle(
-                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
-                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
-                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
-                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
-                            letterSpacing: 0, // 글자 간격을 0으로 설정
-                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: ElevatedButton(
-                    onPressed: gocard,
-                    style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Color(0xFF202020)),
-                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/Union.png',
-                        ),
-                        const Text(
-                          'card',
-                          style: TextStyle(
-                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
-                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
-                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
-                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
-                            letterSpacing: 0, // 글자 간격을 0으로 설정
-                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: ElevatedButton(
-                    onPressed: gomy,
-                    style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Color(0xFF202020)),
-                      shadowColor: MaterialStatePropertyAll(Color(0xFF202020)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/my.png',
-                        ),
-                        const Text(
-                          'my',
-                          style: TextStyle(
-                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
-                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
-                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
-                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
-                            letterSpacing: 0, // 글자 간격을 0으로 설정
-                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: <Widget>[
+            HomeScreen(), // 첫 번째 탭의 화면
+            MenuPage(), // 두 번째 탭의 화면, MenuPage를 여기에 포함
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
             ),
-          ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.menu),
+              label: 'Menu',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.rocket),
+              label: 'AI',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.card_giftcard),
+              label: 'Card',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'My',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
         ),
         body: GestureDetector(
           onTap: closeSearch,
@@ -289,7 +129,6 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ),
                       ],
-                    ),
                   ),
                 ),
               ),
@@ -390,16 +229,24 @@ class _MyAppState extends State<MyApp> {
 }
 
 class MenuPage extends StatelessWidget {
-  const MenuPage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    // MenuPage의 구성은 동일하게 유지
+    return Center(child: Text('Menu Page'));
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Menu Page'),
+        title: Text('Home Page'),
       ),
       body: Center(
-        child: Text('This is the Menu Page'),
+        child: Text('This is the Home Page'),
       ),
     );
   }
