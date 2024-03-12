@@ -34,11 +34,22 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+<<<<<<< HEAD
+=======
+  void goHome() {
+    print("go home");
+    setState(() {
+      isClicked = !isClicked;
+    });
+  }
+
+>>>>>>> parent of e94e591 ([feat] 네비게이터 완성 및 메뉴페이지 기능 추가)
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
+<<<<<<< HEAD
         body: IndexedStack(
           index: _selectedIndex,
           children: <Widget>[
@@ -51,6 +62,165 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
+=======
+        bottomNavigationBar: BottomAppBar(
+          color: Color(0xFF202020),
+          height: 87,
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 5,
+              bottom: 20,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: goHome,
+                    style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.transparent),
+                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/fill_home.png',
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          'home',
+                          style: TextStyle(
+                            fontFamily: 'Pretendard', // 원하는 폰트로 변경
+                            fontSize: 12, // 폰트 크기를 12픽셀로 변경
+                            fontWeight: FontWeight.w400, // 폰트의 굵기를 400으로 변경
+                            height: 22 / 12, // 줄간격을 픽셀 크기에 맞게 조정
+                            letterSpacing: 0, // 글자 간격을 0으로 설정
+                            color: Color(0xFFFFFFFF), // 텍스트 색상을 흰색으로 변경
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: goHome,
+                    style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.transparent),
+                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/recipe.png',
+                          scale: 1.8,
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          '레시피',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: goHome,
+                    style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.transparent),
+                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/zoom_in.png',
+                          scale: 1.8,
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          '검색',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: goHome,
+                    style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.transparent),
+                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/person.png',
+                          scale: 1.8,
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          '프로필',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: ElevatedButton(
+                    onPressed: goHome,
+                    style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.transparent),
+                      shadowColor: MaterialStatePropertyAll(Colors.transparent),
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/home.png', // 새로운 아이콘 이미지 경로
+                          scale: 1.8,
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          '다른 버튼', // 버튼에 표시될 텍스트
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+>>>>>>> parent of e94e591 ([feat] 네비게이터 완성 및 메뉴페이지 기능 추가)
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.menu),
@@ -228,6 +398,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+<<<<<<< HEAD
 class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -252,6 +423,8 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+=======
+>>>>>>> parent of e94e591 ([feat] 네비게이터 완성 및 메뉴페이지 기능 추가)
 class ItemPreview extends StatelessWidget {
   final String mainText, hashtag;
 
